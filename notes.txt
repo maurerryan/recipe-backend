@@ -1,0 +1,31 @@
+docker-compose build composer
+
+docker-compose run --rm composer create-project laravel/laravel .
+
+cd src
+
+ls -l
+
+docker-compose ps
+
+docker-compose up nginx
+
+//make sure to change .env file
+DB_CONNECTION=pgsql
+DB_HOST=psql
+DB_PORT=5432
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=laravel
+
+docker-compose run --rm artisan migrate
+
+docker-compose run --rm artisan make:model Post --migration
+
+docker-compose run --rm artisan tinker
+
+$user = User::create([
+	'email' => 'ryan@test.com',
+	'name' => 'Ryan Maurer',
+	'password' => Hash::make('secret')
+]);
