@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('recipes', function (Blueprint $table) {
             $table->id('recipe_id');
+            $table->integer('user_id')->unsigned();
             $table->string('name')->unique();
             $table->string('description')->nullable();
             $table->string('preptime')->nullable();
@@ -23,8 +24,11 @@ return new class extends Migration
             $table->string('calories_per_serving')->nullable();
             $table->string('personal_notes')->nullable();
             $table->string('type');
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
+        });
+
+        Schema::table('recipes', function(Blueprint $table) {
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 

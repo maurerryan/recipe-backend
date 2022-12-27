@@ -23,6 +23,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'oz',
             'food_category' => 'grains/pasta',
             'recipe_id' => 1,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 2,
@@ -31,6 +32,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'tbsp',
             'food_category' => 'dairy',
             'recipe_id' => 1,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 3,
@@ -39,6 +41,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'oz',
             'food_category' => 'produce',
             'recipe_id' => 1,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 4,
@@ -47,6 +50,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'cloves',
             'food_category' => 'produce',
             'recipe_id' => 1,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 4,
@@ -55,6 +59,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'tbsp',
             'food_category' => 'produce',
             'recipe_id' => 1,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 1,
@@ -63,6 +68,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => '',
             'food_category' => 'meat',
             'recipe_id' => 2,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 2,
@@ -71,6 +77,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'pinch',
             'food_category' => 'seasoning',
             'recipe_id' => 2,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 3,
@@ -79,6 +86,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'cup',
             'food_category' => 'oil',
             'recipe_id' => 2,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 4,
@@ -87,6 +95,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'lbs',
             'food_category' => 'produce',
             'recipe_id' => 2,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 1,
@@ -95,6 +104,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => '',
             'food_category' => 'meat',
             'recipe_id' => 3,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 2,
@@ -103,6 +113,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'tbsp',
             'food_category' => 'oil',
             'recipe_id' => 3,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 3,
@@ -111,6 +122,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => 'tsp',
             'food_category' => 'seasoning',
             'recipe_id' => 3,
+            'created_at' => now(),
         ]);
         DB::table('ingredients')->insert([
             'order' => 4,
@@ -119,6 +131,7 @@ class ingredientsSeeder extends Seeder
             'measurement' => '',
             'food_category' => 'produce',
             'recipe_id' => 3,
+            'created_at' => now(),
         ]);
     }
 }

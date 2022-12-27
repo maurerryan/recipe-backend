@@ -18,8 +18,14 @@ return new class extends Migration
             $table->integer('order');
             $table->string('title');
             $table->text('instruction');
-            $table->foreignId('recipe_id')->constrained();
+            $table->integer('recipe_id')->unsigned();
+            $table->timestamps();
         });
+
+        Schema::table('instructions', function(Blueprint $table) {
+            $table->foreign('recipe_id')->references('recipe_id')->on('recipes');
+        });
+
     }
 
     /**

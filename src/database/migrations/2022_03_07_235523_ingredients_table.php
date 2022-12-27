@@ -20,7 +20,12 @@ return new class extends Migration
             $table->string('denomination');
             $table->string('measurement');
             $table->string('food_category');
-            $table->foreignId('recipe_id')->constrained();
+            $table->integer('recipe_id')->unsigned();
+            $table->timestamps();
+        });
+
+        Schema::table('ingredients', function(Blueprint $table) {
+            $table->foreign('recipe_id')->references('recipe_id')->on('recipes');
         });
     }
 

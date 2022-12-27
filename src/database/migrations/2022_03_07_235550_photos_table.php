@@ -16,7 +16,12 @@ return new class extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('recipe_id')->constrained();
+            $table->integer('recipe_id')->unsigned();
+            $table->timestamps();
+        });
+
+        Schema::table('photos', function(Blueprint $table) {
+            $table->foreign('recipe_id')->references('recipe_id')->on('recipes');
         });
     }
 

@@ -16,6 +16,7 @@ class recipesSeeder extends Seeder
     public function run()
     {
         DB::table('recipes')->insert([
+            'user_id' => 1,
             'name' => 'Creamy Tuna Mushroom Pasta',
             'description' => 'This creamy tuna mushroom pasta recipe is tossed with the coziest lemon garlic cream sauce and easy to make in just 30 minutes. Feel free to double the batch if you would like to use a full pound of pasta.',
             'preptime' => '15 Minutes',
@@ -24,8 +25,10 @@ class recipesSeeder extends Seeder
             'calories_per_serving' => '360',
             'personal_notes' => '',
             'type' => 'Main',
+            'created_at' => now(),
         ]);
         DB::table('recipes')->insert([
+            'user_id' => 1,
             'name' => 'Salmon with Burst Tomato Sauce',
             'description' => 'This Salmon in Burst Tomato Sauce recipe is ultra-easy to make in 30 minutes and simmered in a garlicky tomato basil cream sauce. Serve with crusty bread, pasta, rice, or whatever sounds good!',
             'preptime' => '30 Minutes',
@@ -34,8 +37,10 @@ class recipesSeeder extends Seeder
             'calories_per_serving' => '420',
             'personal_notes' => '',
             'type' => 'Main',
+            'created_at' => now(),
         ]);
         DB::table('recipes')->insert([
+            'user_id' => 2,
             'name' => 'Lemon, Garlic & Thyme Drumsticks',
             'description' => 'You will love this delicious Lemon, Garlic & Thyme Drumsticks Recipe!',
             'preptime' => '10 Minutes',
@@ -44,6 +49,7 @@ class recipesSeeder extends Seeder
             'calories_per_serving' => '510',
             'personal_notes' => '',
             'type' => 'Main',
+            'created_at' => now(),
         ]);
     }
 }
