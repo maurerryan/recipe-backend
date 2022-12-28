@@ -28,22 +28,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 //Route::get('/recipes', [RecipeController::class, 'index']);
-// Route::get('/recipes', 'RecipeController@index');
+//Route::get('/recipes', 'RecipeController@index');
 
 // works (dont delete)
 // Route::get('/recipes', function() {
 //     return Recipes::with('user:id,first_name,last_name,username,avatar')->latest()->get();
 // });
 
-Route::get('/recipes', function() {
-    // return Recipes::with('ingredients')->latest()->get();
-    //return Recipes::with('instructions')->latest()->get();
-    return Recipes::with('ingredients','instructions')->latest()->get();
-});
+// works for recipe & ingredients
+// Route::get('/recipes', function() {
+//     // return Recipes::with('ingredients')->latest()->get();
+//     //return Recipes::with('instructions')->latest()->get();
+//     return Recipes::with('ingredients','instructions')->latest()->get();
+// });
 
 // Route::get('/recipes', 'RecipeController@index');
 
-//Route::resource('recipes', RecipeController::class);
+Route::resource('recipes', RecipeController::class);
 Route::post('/recipes', [RecipeController::class, 'create']);
 
 Route::post('/ingredients', [IngredientsController::class, 'create']);
