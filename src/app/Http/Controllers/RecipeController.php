@@ -48,6 +48,7 @@ class RecipeController extends Controller
             'preptime'=>$request->preptime,
             'cooktime'=>$request->cooktime,
             'servings'=>$request->servings,
+            'user_id'=>$request->userId,
             'type'=>'Main',
         ]);
 
