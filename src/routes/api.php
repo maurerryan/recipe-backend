@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use Laravel\Fortify\RoutePath;
 
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\IngredientsController;
@@ -25,7 +27,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store'])
+->middleware(['guest:'.config('fortify.guard')]);
 
 //Route::get('/recipes', [RecipeController::class, 'index']);
 //Route::get('/recipes', 'RecipeController@index');

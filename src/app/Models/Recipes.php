@@ -10,7 +10,7 @@ class Recipes extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'description', 'preptime', 'cooktime','servings','calories_per_serving','personal_notes','type','user_id'
+        'name', 'description', 'preptime', 'cooktime','servings','calories_per_serving','personal_notes','type', 'user_id'
     ];
 
     

@@ -22,18 +22,21 @@ class RecipeController extends Controller
     public function create(Request $request)
     {
 
-        $data = $request->only('name', 'description', 'preptime', 'cooktime', 'servings');
+        $data = $request->only('name', 'description', 'preptime', 'cooktime', 'servings', 'userId');
         $validator = Validator::make($data, 
             [
-                'name' => 'required',
+                'name' => 'required|unique:recipes',
                 'description' => 'required',
                 'preptime' => 'required',
                 'cooktime' => 'required',
-                'servings' => 'required'
+                'servings' => 'required',
+                'userId' => 'required|integer|numeric'
             ],[
-                // 'name.required' => 'Please enter a valid name',
-                'required' => 'Please enter a valid :attribute'
-                // 'unique' => 'This :attribute is already in use. Please choose another.'
+                'userId.required' => 'Invalid User ID, is required',
+                'userId.integer' => 'Invalid User ID, not an integer',
+                'userId.numeric' => 'Invalid User ID, not numeric',
+                'required' => 'Please enter a valid :attribute',
+                'unique' => 'This :attribute is already in use. Please choose another.'
             ]
 
         );
